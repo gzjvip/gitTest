@@ -1,0 +1,54 @@
+Git Command State
+
+git config --global user.name "Your Name" 配置git全局用户名
+git config --global user.email "email@example.com" 配置git全局邮箱
+git config --global alias.st status 给status命令配置别名st（方便命令使用）
+git version 查看git版本
+git init 将所在目录纳入git的管理仓库
+git add xxx 添加xxx文件夹到git仓库
+git add -f xxx 强制添加xxx文件夹到git仓库（当xxx在.gitignore清单时）
+git status 查看状态
+git log —-pretty=oneline 查看提交日志（一行模式）
+git log -l 显示最后一次提交 git log --graph --pretty=oneline --abbrev-commit 查看分支合并记录
+git reflog 查看操作命令记录
+git branch 查看本地分支
+git branch -r 查看远程仓库分支
+git branch -a 查看所有分支（包含远程仓库）
+git branch xxx 创建xxx分支
+git branch -d xxx 删除本地xxx分支
+git branch -D xxx 强制删除本地xxx分支（针对未被合并过的分支）
+git branch --set-upstream-to=origin/xxx xxx 指定本地xxx分支和远程仓库xxx分支关联链接
+git commit -m “xxx” 提交代码到版本库，并注释xxx
+git diff HEAD —-xxx 对比xxx文件在版本库和工作区的差异
+git checkout xxx 切换到xxx分支(或者切换到名为xxx的tag，但此时tag为快照形式，代码不能修改)
+git checkout -b xxx 创建并切换到xxx分支
+git checkout -b xxx xtagx 创建并切换到xxx分支，并且该分支是名为xtagx的tag内容
+git checkout —-xxx 撤销xxx文件在工作区的修改（add之前的修改）
+git reset HEAD xxx 把xxx文件在暂存区的修改撤回到工作区（commit之前的修改）
+git reset —-hard HEAD^ 撤回到版本库上一版本的修改（push之前的修改）
+git reset —-hard xxx 回到xxx提交id号的修改（push之前的修改）
+git rm xxx 版本库中删除xxx文件
+git merge xxx 将xxx分支的内容合并到当前分支上（无合并记录）
+git merge —-no-ff -m “xxx” xxx 将xxx分支合并到当前分支，并注释xxx（有合并记录）
+git rebase 将代码分支合并记录取消（所有代码提交记录都是一条分支显示）
+git stash 将当前分支工作区内容缓存起来（方便切换到其他分支去进行紧急修改）
+git stash list 查看缓存的修改
+git stash apply 将缓存中的修改内容恢复到当前分支（stash中的缓存内容仍保留）
+git stash apply stash@{x} 当前分支恢复到第x次缓存的修改内容
+git stash drop 将当前分支中stash缓存的内容删除
+git stash pop 当前分支恢复并删除stash上缓存的临时修改
+git remote add origin git@github.com:username/projectname.git 将本地已有仓库关联到github上的空仓库
+git remote 查看本地仓库关联的远程仓库信息
+git remote -v 查看抓去和推送的远程仓库地址
+git remote rm origin 删除远程仓库origin的关联
+git push -u origin master 将本地仓库的内容推送到远程仓库origin上，并关联两个仓库的master分支
+git push origin xxx 推送修改内容到远程仓库名为origin的xxx分支
+git push origin --delete xxx 删除远程仓库origin上的xxx分支
+git clone git@github.com:username/projectname.git 克隆github远程仓库上git@github.com:username/projectname.git的代码到本地
+git pull 抓取远程仓库上的最新代码（需先和远程仓库分支关联）
+git tag 查看所有标签
+git tag xxx 给当前分支打上xxx标签(最新提交的commit上)
+git tag xxx xidx 给commit id为xidx的提交打上xxx标签
+git tag -a xxx -m “xxx” xidx 给commit id为xidx的提交打上名为xxx的标签，并注释xxx
+git show xxx 查看标签为xxx的记录
+git check-ignore -v xxx 查看xxx文件被忽略无法add到仓库的原因
