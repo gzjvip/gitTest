@@ -8,7 +8,7 @@ git init 将所在目录纳入git的管理仓库
 git add xxx 添加xxx文件夹到git仓库
 git add -f xxx 强制添加xxx文件夹到git仓库（当xxx在.gitignore清单时）
 git status 查看状态
-git log —-pretty=oneline 查看提交日志（一行模式）
+git log --pretty=oneline 查看提交日志（一行模式）
 git log -l 显示最后一次提交 git log --graph --pretty=oneline --abbrev-commit 查看分支合并记录
 git reflog 查看操作命令记录
 git branch 查看本地分支
@@ -19,19 +19,19 @@ git branch -d xxx 删除本地xxx分支
 git branch -D xxx 强制删除本地xxx分支（针对未被合并过的分支）
 git branch --set-upstream-to=origin/xxx xxx 指定本地xxx分支和远程仓库xxx分支关联链接
 git commit -m “xxx” 提交代码到版本库，并注释xxx
-git diff HEAD —- xxx 对比xxx文件在工作区和版本库(HEAD指向)的差异
-git diff origin/xxx —- xfilex 对比xfilex文件在工作区和远程仓库orign的xxx分支差异
+git diff HEAD -- xxx 对比xxx文件在工作区和版本库(HEAD指向)的差异
+git diff origin/xxx -- xfilex 对比xfilex文件在工作区和远程仓库orign的xxx分支差异
 git diff xloacalx origin/xxx -- xfilex 对比xfilex文件在本地版本库xlocal分支和远程仓库origin的xxx分支的差异
 git checkout xxx 切换到xxx分支(或者切换到名为xxx的tag，但此时tag为快照形式，代码不能修改)
 git checkout -b xxx 创建并切换到xxx分支
 git checkout -b xxx xtagx 创建并切换到xxx分支，并且该分支是名为xtagx的tag内容
-git checkout —- xxx 撤销xxx文件在工作区的修改（add之前的修改）
+git checkout -- xxx 撤销xxx文件在工作区的修改（add之前的修改）
 git reset HEAD xxx 把xxx文件在暂存区的修改撤回到工作区（commit之前的修改）
-git reset —-hard HEAD^ 撤回到版本库上一版本的修改（push之前的修改）
-git reset —-hard xxx 回到xxx提交id号的修改（push之前的修改）
+git reset --hard HEAD^ 撤回到版本库上一版本的修改（push之前的修改）
+git reset --hard xxx 回到xxx提交id号的修改（push之前的修改）
 git rm xxx 版本库中删除xxx文件
 git merge xxx 将xxx分支的内容合并到当前分支上（无合并记录）
-git merge —-no-ff -m “xxx” xxx 将xxx分支合并到当前分支，并注释xxx（有合并记录）
+git merge --no-ff -m “xxx” xxx 将xxx分支合并到当前分支，并注释xxx（有合并记录）
 git rebase 将代码分支合并记录取消（所有代码提交记录都是一条分支显示）
 git stash 将当前分支工作区内容缓存起来（方便切换到其他分支去进行紧急修改）
 git stash list 查看缓存的修改
